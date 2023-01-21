@@ -1,6 +1,5 @@
 package com.misoft.jobportal.service;
 
-import java.io.IOException;
 import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -17,7 +16,7 @@ public class FileUploadService {
 	public void init() {
 		try {
 			Files.createDirectories(root);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			throw new RuntimeException("Could not initialize folder for upload");
 		}
 	}
