@@ -30,7 +30,7 @@ public class Signup {
 	@Column(name="password")
     private String password;
     
-	@Column(name="last_name")
+	@Column(name="user_type")
     private String userType;
 
 	public Long getUser_id() {
