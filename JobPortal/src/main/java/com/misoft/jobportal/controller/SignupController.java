@@ -1,10 +1,9 @@
 package com.misoft.jobportal.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.misoft.jobportal.entity.Signup;
@@ -17,8 +16,8 @@ public class SignupController {
 	@Autowired
 	SignupRepository signupRepository;
 	
-	@GetMapping("/signup")
-    List<Signup> all() {
-        return signupRepository.findAll();
+	@PostMapping("/signup")
+    Signup post(@RequestBody Signup signup) {
+        return signupRepository.save(signup);
     }
 }
