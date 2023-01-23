@@ -10,10 +10,10 @@ public class SignupService {
 	@Autowired
 	SignupRepository signupRepository;
 	
-	public Signup post(Signup signupEntity) {
+	public Signup post(Signup signup) {
 		
-		if(!signupEntity.equals(null)) {
-			return signupRepository.save(signupEntity);
+		if(!signup.equals(null)) {
+			return signupRepository.save(signup);
 		}
 		return null;
 	}

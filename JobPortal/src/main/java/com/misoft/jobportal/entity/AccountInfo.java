@@ -9,8 +9,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="users")
-public class Signup {
-
+public class AccountInfo {
+	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long user_id;
@@ -29,12 +29,6 @@ public class Signup {
     
 	@Column(name="password")
     private String password;
-    
-	@Column(name="user_type")
-    private String userType;
-	
-	@Column(name="user_agreement")
-    private String userAgreement;
 
 	public Long getUser_id() {
 		return user_id;
@@ -83,22 +77,7 @@ public class Signup {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	
 
-	public String getUserType() {
-		return userType;
-	}
-
-	public void setUserType(String userType) {
-		this.userType = userType;
-	}
-
-	public String getUserAgreement() {
-		return userAgreement;
-	}
-
-	public void setUserAgreement(String userAgreement) {
-		this.userAgreement = userAgreement;
-	}
-    
-    
 }
