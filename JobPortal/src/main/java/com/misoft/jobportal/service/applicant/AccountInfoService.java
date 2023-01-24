@@ -1,9 +1,9 @@
-package com.misoft.jobportal.service;
+package com.misoft.jobportal.service.applicant;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.misoft.jobportal.entity.AccountInfo;
-import com.misoft.jobportal.repository.AccountInfoRepository;
+import com.misoft.jobportal.entity.applicant.AccountInfo;
+import com.misoft.jobportal.repository.applicant.AccountInfoRepository;
 
 public class AccountInfoService {
 	

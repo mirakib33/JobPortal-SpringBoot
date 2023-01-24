@@ -1,4 +1,4 @@
-package com.misoft.jobportal.entity;
+package com.misoft.jobportal.entity.applicant;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
