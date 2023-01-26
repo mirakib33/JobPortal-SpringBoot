@@ -7,5 +7,7 @@ import com.misoft.jobportal.entity.applicant.AccountInfo;
 
 @Repository
 public interface AccountInfoRepository extends JpaRepository<AccountInfo, Long> {
+	
+	
 
 }
