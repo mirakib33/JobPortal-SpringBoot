@@ -50,14 +50,38 @@ public class AcademicSummaryController {
 	@PutMapping("/academic-summary/{id}")
 	public AcademicSummary update(@PathVariable Long id, @RequestBody AcademicSummary academicSummary) {
 		AcademicSummary post = academicSummaryService.getById(id);
+		
+		
+		
+		post.setUserId(academicSummary.getUserId());
 		post.setDegree(academicSummary.getDegree());
 		post.setSubjectGroup(academicSummary.getSubjectGroup());
 		post.setInstituteBoard(academicSummary.getInstituteBoard());
 		post.setPassingYear(academicSummary.getPassingYear());
 		post.setResult(academicSummary.getResult());
 		post.setScale(academicSummary.getScale());
-		academicSummaryService.save(academicSummary);
-		    return academicSummary;
+		academicSummaryService.save(post);
+		    return post;
+	}
+	
+	
+	@PutMapping("/academic-summaryByUserId/{userId}")
+	public AcademicSummary updateByUserId(@PathVariable Long userId, @RequestBody AcademicSummary academicSummary) {
+		AcademicSummary post = academicSummaryService.getByUserId(userId);
+		
+		if (post == null) {
+			post = new AcademicSummary();
+		}
+		
+		post.setUserId(academicSummary.getUserId());
+		post.setDegree(academicSummary.getDegree());
+		post.setSubjectGroup(academicSummary.getSubjectGroup());
+		post.setInstituteBoard(academicSummary.getInstituteBoard());
+		post.setPassingYear(academicSummary.getPassingYear());
+		post.setResult(academicSummary.getResult());
+		post.setScale(academicSummary.getScale());
+		academicSummaryService.save(post);
+		    return post;
 	}
 
 }

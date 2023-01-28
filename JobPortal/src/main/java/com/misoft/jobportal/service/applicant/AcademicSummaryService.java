@@ -31,6 +31,15 @@ public class AcademicSummaryService {
 		} 
 		return academicSummary;
 	}
+	
+	public AcademicSummary getByUserId(Long id) {
+		Optional<AcademicSummary> data = academicSummaryRepository.findByUserId(id);
+		AcademicSummary academicSummary = null;
+		if (data.isPresent()) {
+			academicSummary = data.get();
+		} 
+		return academicSummary;
+	}
 
 	public void delete(AcademicSummary academicSummary) {
 		academicSummaryRepository.delete(academicSummary);

@@ -32,6 +32,9 @@ public class AcademicSummary {
 		
 		@Column(name="scale")
 	    private String scale;
+		
+		@Column(name="user_id")
+		private Long userId;
 
 		public Long getAcademic_id() {
 			return academic_id;
@@ -85,10 +88,16 @@ public class AcademicSummary {
 			return scale;
 		}
 
+		public Long getUserId() {
+			return userId;
+		}
+
+		public void setUserId(Long userId) {
+			this.userId = userId;
+		}
+
 		public void setScale(String scale) {
 			this.scale = scale;
 		}
-		
-		
 
 }
