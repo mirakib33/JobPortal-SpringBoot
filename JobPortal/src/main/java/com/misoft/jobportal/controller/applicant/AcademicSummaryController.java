@@ -29,25 +29,25 @@ public class AcademicSummaryController {
 		return academicSummaryService.get();
 	}
 
-	@PostMapping("/save")
+	@PostMapping("/academic-summary")
 	public AcademicSummary save(@RequestBody AcademicSummary academicSummary) {
 		academicSummaryService.save(academicSummary);
 		return academicSummary;
 	}
-	@GetMapping("/user/{id}")
+	@GetMapping("/academic-summary/{id}")
 	public AcademicSummary getById(@PathVariable Long id) {
 		AcademicSummary academicSummary = academicSummaryService.getById(id);
 		return academicSummary;
 	}
 
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/academic-summary/{id}")
 	public AcademicSummary delete(@PathVariable Long id) {
 		AcademicSummary academicSummary = academicSummaryService.getById(id);
 		academicSummaryService.delete(academicSummary);
 		return academicSummary;
 	}
 
-	@PutMapping("/update/{id}")
+	@PutMapping("/academic-summary/{id}")
 	public AcademicSummary update(@PathVariable Long id, @RequestBody AcademicSummary academicSummary) {
 		AcademicSummary post = academicSummaryService.getById(id);
 		post.setDegree(academicSummary.getDegree());
