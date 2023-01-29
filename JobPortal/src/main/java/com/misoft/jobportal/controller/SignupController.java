@@ -7,17 +7,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.misoft.jobportal.entity.Signup;
-import com.misoft.jobportal.repository.SignupRepository;
+import com.misoft.jobportal.service.SignupService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 public class SignupController {
 
 	@Autowired
-	SignupRepository signupRepository;
+	SignupService signupService;
 	
 	@PostMapping("/signup")
-    Signup post(@RequestBody Signup signup) {
-        return signupRepository.save(signup);
-    }
+	public Signup save(@RequestBody Signup signup) {
+		signupService.save(signup);
+		return signup;
+	}
 }
