@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.misoft.jobportal.entity.applicant.AcademicSummary;
 import com.misoft.jobportal.entity.employer.PerJobPost;
-import com.misoft.jobportal.service.applicant.AcademicSummaryService;
 import com.misoft.jobportal.service.employer.PerJobPostService;
 
 @RestController
