@@ -13,7 +13,9 @@ public class AccountInfo {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long user_id;
+	
+	@Column(name="user_id")
+    private Long id;
 	
 	@Column(name="first_name")
     private String firstName;
@@ -29,13 +31,15 @@ public class AccountInfo {
     
 	@Column(name="password")
     private String password;
+	
 
-	public Long getUser_id() {
-		return user_id;
+
+	public Long getId() {
+		return id;
 	}
 
-	public void setUser_id(Long user_id) {
-		this.user_id = user_id;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getFirstName() {
