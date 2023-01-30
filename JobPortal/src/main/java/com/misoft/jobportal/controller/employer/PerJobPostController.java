@@ -69,11 +69,11 @@ public class PerJobPostController {
 	
 	
 
-//	@DeleteMapping("/permanent_job/{id}")
-//	public PerJobPost delete(@PathVariable Long id) {
-//		PerJobPost perJobPost = perJobPostService.getById(id);
-//		perJobPostService.delete(perJobPost);
-//		return perJobPost;
-//	}
+	@DeleteMapping("/permanent-job-post/{id}")
+	public PerJobPost delete(@PathVariable Long id) {
+		PerJobPost perJobPost = perJobPostService.getById(id);
+		perJobPostService.delete(perJobPost);
+		return perJobPost;
+	}
 	
 }

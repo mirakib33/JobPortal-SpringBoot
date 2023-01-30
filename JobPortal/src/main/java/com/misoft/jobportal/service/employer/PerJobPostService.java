@@ -33,8 +33,8 @@ public class PerJobPostService {
 	}
 
 
-//	public void delete(PerJobPost perJobPost) {
-//		perJobPostRepository.delete(perJobPost);
-//	}
+	public void delete(PerJobPost perJobPost) {
+		perJobPostRepository.delete(perJobPost);
+	}
 
 }
