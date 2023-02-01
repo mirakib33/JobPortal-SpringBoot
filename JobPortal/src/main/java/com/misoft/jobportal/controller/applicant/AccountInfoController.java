@@ -28,8 +28,8 @@ public class AccountInfoController {
 	
 	@GetMapping("/account-info/{id}")
 	public AccountInfo getById(@PathVariable Long id) {
-		AccountInfo academicSummary = accountInfoService.getById(id);
-		return academicSummary;
+		AccountInfo accountInfo = accountInfoService.getById(id);
+		return accountInfo;
 	}
 	
 	@PutMapping("/account-info/{id}")

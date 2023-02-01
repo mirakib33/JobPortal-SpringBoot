@@ -15,12 +15,12 @@ public class PerJobPostService {
 	@Autowired
 	private PerJobPostRepository perJobPostRepository;
 
-	public List<PerJobPost> get() {
-		return perJobPostRepository.findAll();
-	}
-
 	public void save(PerJobPost perJobPost) {
 		perJobPostRepository.save(perJobPost);
+	}
+	
+	public List<PerJobPost> get() {
+		return perJobPostRepository.findAll();
 	}
 
 	public PerJobPost getById(Long id) {

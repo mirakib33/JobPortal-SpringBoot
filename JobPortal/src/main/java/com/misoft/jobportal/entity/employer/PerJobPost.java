@@ -71,6 +71,18 @@ public class PerJobPost {
 	
 	@Column(name="user_id")
 	private Long userId;
+	
+	@Column(name="cat_id")
+	private Long catId;
+	
+
+	public Long getCatId() {
+		return catId;
+	}
+
+	public void setCatId(Long catId) {
+		this.catId = catId;
+	}
 
 	public Long getPer_jobpost_id() {
 		return per_jobpost_id;
