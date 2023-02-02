@@ -18,7 +18,7 @@ import com.misoft.jobportal.service.BankAccountService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-@RequestMapping("/payment-methode")
+@RequestMapping("/payment-method")
 public class BankAccountController {
 	
 	@Autowired
