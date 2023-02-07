@@ -1,11 +1,6 @@
 package com.misoft.jobportal.entity.employer;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name="per_job_cv")
@@ -24,6 +19,10 @@ public class PerJobCv {
 	
 	@Column(name="status")
     private boolean status;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "per_jobpost_id")
+	private PerJobPost perJobPost;
 
 	public Long getId() {
 		return id;
@@ -56,6 +55,12 @@ public class PerJobCv {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-	
-	
+
+	public PerJobPost getPerJobPost() {
+		return perJobPost;
+	}
+
+	public void setPerJobPost(PerJobPost perJobPost) {
+		this.perJobPost = perJobPost;
+	}
 }
