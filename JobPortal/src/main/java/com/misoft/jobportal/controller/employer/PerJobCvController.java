@@ -27,23 +27,23 @@ public class PerJobCvController {
 		return perJobCv;
 	}
 	
-//	@GetMapping("/per-job-cv")
-//	public List<PerJobCv> get() {
-//		return perJobCvService.get();
-//	}
+	@GetMapping("/per-job-cv")
+	public List<PerJobCv> get() {
+		return perJobCvService.get();
+	}
 
 	@GetMapping("/per-job-cv/{id}")
-	public PerJobCv getJobById(@PathVariable Long id) {
-		PerJobCv perJobCv = perJobCvService.getJobById(id);
+	public PerJobCv getById(@PathVariable Long id) {
+		PerJobCv perJobCv = perJobCvService.getById(id);
 		return perJobCv;
 	}
 
 
-//	@DeleteMapping("/per-job-cv/{id}")
-//	public PerJobCv delete(@PathVariable Long id) {
-//		PerJobCv perJobCv = perJobCvService.getById(id);
-//		perJobCvService.delete(perJobCv);
-//		return perJobCv;
-//	}
+	@DeleteMapping("/per-job-cv/{id}")
+	public PerJobCv delete(@PathVariable Long id) {
+		PerJobCv perJobCv = perJobCvService.getById(id);
+		perJobCvService.delete(perJobCv);
+		return perJobCv;
+	}
 	
 }
