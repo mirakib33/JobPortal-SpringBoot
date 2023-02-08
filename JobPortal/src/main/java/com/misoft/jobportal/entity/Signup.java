@@ -1,11 +1,14 @@
 package com.misoft.jobportal.entity;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name="users")
@@ -35,6 +38,10 @@ public class Signup {
 	
 	@Column(name="user_agreement")
     private String userAgreement;
+
+	@CreationTimestamp
+	@Column(name="signup_date")
+	private LocalDateTime signup_date;
 
 	public Long getUser_id() {
 		return user_id;
@@ -99,6 +106,12 @@ public class Signup {
 	public void setUserAgreement(String userAgreement) {
 		this.userAgreement = userAgreement;
 	}
-    
-    
+
+	public LocalDateTime getSignup_date() {
+		return signup_date;
+	}
+
+	public void setSignup_date(LocalDateTime signup_date) {
+		this.signup_date = signup_date;
+	}
 }

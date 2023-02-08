@@ -25,6 +25,8 @@ public class PerJobCv {
 	@Column(name="status")
     private boolean status;
 
+
+
 	public Long getId() {
 		return id;
 	}
