@@ -1,6 +1,7 @@
 package com.misoft.jobportal.controller.employer;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -43,6 +44,13 @@ public class PerJobCvController {
 	public PerJobCv delete(@PathVariable Long id) {
 		PerJobCv perJobCv = perJobCvService.getById(id);
 		perJobCvService.delete(perJobCv);
+		return perJobCv;
+	}
+
+
+	@GetMapping("/per-job-cv/{userId}")
+	public Optional<PerJobCv> getPerJobCvById(@PathVariable Long userId) {
+		Optional<PerJobCv> perJobCv = perJobCvService.getPerJobCvById(userId);
 		return perJobCv;
 	}
 	

@@ -41,7 +41,7 @@ public class Signup {
 
 	@CreationTimestamp
 	@Column(name="signup_date")
-	private LocalDateTime signup_date;
+	private LocalDateTime signupDate;
 
 	public Long getUser_id() {
 		return user_id;
@@ -107,11 +107,13 @@ public class Signup {
 		this.userAgreement = userAgreement;
 	}
 
-	public LocalDateTime getSignup_date() {
-		return signup_date;
+	public LocalDateTime getSignupDate() {
+		return signupDate;
 	}
 
-	public void setSignup_date(LocalDateTime signup_date) {
-		this.signup_date = signup_date;
+	public void setSignupDate(LocalDateTime signupDate) {
+		this.signupDate = signupDate;
 	}
+
+	
 }

@@ -37,4 +37,8 @@ public class PerJobCvService {
 		perJobCvRepository.delete(perJobCv);
 	}
 
+	public Optional<PerJobCv> getPerJobCvById(Long userId) {
+		return perJobCvRepository.findById(userId);
+	}
+
 }

@@ -1,11 +1,12 @@
 package com.misoft.jobportal.entity.employer;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.*;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name="permanent_job_post")
@@ -69,11 +70,18 @@ public class PerJobPost {
 	@Column(name="job_category")
     private String jobCategory;
 	
+	@CreationTimestamp
+	@Column(name="jobpost_date")
+	private LocalDateTime jobPostDate;
+	
 	@Column(name="user_id")
 	private Long userId;
 	
 	@Column(name="cat_id")
 	private Long catId;
+
+	@ManyToMany(mappedBy = "perJobPosts")
+	private Set<PerJobCv> perJobCvs = new HashSet<>();
 	
 
 	public Long getCatId() {
@@ -243,6 +251,15 @@ public class PerJobPost {
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
+
+	public LocalDateTime getJobPostDate() {
+		return jobPostDate;
+	}
+
+	public void setJobPostDate(LocalDateTime jobPostDate) {
+		this.jobPostDate = jobPostDate;
+	}
+	
 	
 	
 }
