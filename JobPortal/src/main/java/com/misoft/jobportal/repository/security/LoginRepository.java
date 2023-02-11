@@ -1,10 +1,10 @@
-package com.misoft.jobportal.repository;
+package com.misoft.jobportal.repository.security;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.misoft.jobportal.entity.Signup;
+import com.misoft.jobportal.entity.security.Signup;
 
 public interface LoginRepository extends JpaRepository<Signup, Long>{
 	
