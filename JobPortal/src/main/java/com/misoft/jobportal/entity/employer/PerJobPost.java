@@ -80,8 +80,8 @@ public class PerJobPost {
 	@Column(name="cat_id")
 	private Long catId;
 
-	@ManyToMany(mappedBy = "perJobPosts")
-	private Set<PerJobCv> perJobCvs = new HashSet<>();
+//	@ManyToMany(mappedBy = "perJobPosts")
+//	private Set<PerJobCv> perJobCvs = new HashSet<>();
 	
 
 	public Long getCatId() {

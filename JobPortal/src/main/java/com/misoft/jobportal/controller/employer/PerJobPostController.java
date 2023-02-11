@@ -75,5 +75,10 @@ public class PerJobPostController {
 		perJobPostService.delete(perJobPost);
 		return perJobPost;
 	}
+
+	@GetMapping("/per-job-cv/{userId}")
+	public List<PerJobPost> getPerJobById(@PathVariable Long userId) {
+		return perJobPostService.getJobById(userId);
+	}
 	
 }

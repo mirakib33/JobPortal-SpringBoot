@@ -30,10 +30,10 @@ public class PerJobCv {
 	@Column(name="apply_date")
 	private LocalDateTime applyDate;
 
-	@ManyToMany
-	@JoinTable(name="cv_perjob", joinColumns = @JoinColumn(name="perjob_cv_id"),
-	inverseJoinColumns = @JoinColumn(name="per_jobpost_id"))
-	private Set<PerJobPost> perJobPosts = new HashSet<>();
+//	@ManyToMany
+//	@JoinTable(name="cv_perjob", joinColumns = @JoinColumn(name="perjob_cv_id"),
+//	inverseJoinColumns = @JoinColumn(name="per_jobpost_id"))
+//	private Set<PerJobPost> perJobPosts = new HashSet<>();
 
 
 
@@ -77,11 +77,11 @@ public class PerJobCv {
 		this.applyDate = applyDate;
 	}
 
-	public Set<PerJobPost> getPerJobPosts() {
-		return perJobPosts;
-	}
-
-	public void setPerJobPosts(Set<PerJobPost> perJobPosts) {
-		this.perJobPosts = perJobPosts;
-	}
+//	public Set<PerJobPost> getPerJobPosts() {
+//		return perJobPosts;
+//	}
+//
+//	public void setPerJobPosts(Set<PerJobPost> perJobPosts) {
+//		this.perJobPosts = perJobPosts;
+//	}
 }

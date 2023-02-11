@@ -3,6 +3,7 @@ package com.misoft.jobportal.service.employer;
 import java.util.List;
 import java.util.Optional;
 
+import com.misoft.jobportal.entity.employer.PerJobCv;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -37,4 +38,7 @@ public class PerJobPostService {
 		perJobPostRepository.delete(perJobPost);
 	}
 
+	public List<PerJobPost> getJobById(Long userID) {
+		return perJobPostRepository.getJobById(userID);
+	}
 }
