@@ -1,4 +1,6 @@
-package com.misoft.jobportal.entity.security;
+package com.misoft.jobportal.entity;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -6,15 +8,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name="admin")
-public class AdminSignup {
+@Table(name="users")
+public class Signup {
 
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="admin_id")
-	private Long id;
+    private Long user_id;
 	
 	@Column(name="first_name")
     private String firstName;
@@ -30,19 +32,23 @@ public class AdminSignup {
     
 	@Column(name="password")
     private String password;
-
+    
 	@Column(name="user_type")
-	private String userType = "admin";
+    private String userType;
 	
 	@Column(name="user_agreement")
     private String userAgreement;
 
-	public Long getId() {
-		return id;
+	@CreationTimestamp
+	@Column(name="signup_date")
+	private LocalDateTime signupDate;
+
+	public Long getUser_id() {
+		return user_id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setUser_id(Long user_id) {
+		this.user_id = user_id;
 	}
 
 	public String getFirstName() {
@@ -85,6 +91,14 @@ public class AdminSignup {
 		this.password = password;
 	}
 
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+
 	public String getUserAgreement() {
 		return userAgreement;
 	}
@@ -92,6 +106,14 @@ public class AdminSignup {
 	public void setUserAgreement(String userAgreement) {
 		this.userAgreement = userAgreement;
 	}
-	
+
+	public LocalDateTime getSignupDate() {
+		return signupDate;
+	}
+
+	public void setSignupDate(LocalDateTime signupDate) {
+		this.signupDate = signupDate;
+	}
+
 	
 }

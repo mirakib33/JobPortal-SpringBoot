@@ -1,10 +1,10 @@
-package com.misoft.jobportal.service.security;
+package com.misoft.jobportal.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.misoft.jobportal.entity.security.AdminSignup;
-import com.misoft.jobportal.repository.security.AdminSignupRepository;
+import com.misoft.jobportal.entity.AdminSignup;
+import com.misoft.jobportal.repository.AdminSignupRepository;
 
 @Service
 public class AdminSignupService {
