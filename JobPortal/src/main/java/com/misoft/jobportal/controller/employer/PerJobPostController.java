@@ -2,6 +2,7 @@ package com.misoft.jobportal.controller.employer;
 
 import java.util.List;
 
+import com.misoft.jobportal.DTO.PerAppliedJobsDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -77,7 +78,7 @@ public class PerJobPostController {
 	}
 
 	@GetMapping("/per-job-cv/{userId}")
-	public List<PerJobPost> getPerJobById(@PathVariable Long userId) {
+	public List<PerAppliedJobsDTO> getPerJobById(@PathVariable Long userId) {
 		return perJobPostService.getJobById(userId);
 	}
 	

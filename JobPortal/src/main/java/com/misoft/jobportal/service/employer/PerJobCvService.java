@@ -18,17 +18,13 @@ public class PerJobCvService {
 	public void save(PerJobCv perJobCv) {
 		perJobCvRepository.save(perJobCv);
 	}
-	
-	public List<PerJobCv> get() {
-		return perJobCvRepository.findAll();
-	}
 
 	public PerJobCv getById(Long id) {
 		Optional<PerJobCv> data = perJobCvRepository.findById(id);
 		PerJobCv perJobCv = null;
 		if (data.isPresent()) {
 			perJobCv = data.get();
-		} 
+		}
 		return perJobCv;
 	}
 
@@ -36,9 +32,5 @@ public class PerJobCvService {
 	public void delete(PerJobCv perJobCv) {
 		perJobCvRepository.delete(perJobCv);
 	}
-
-//	public List<PerJobCv> getJobById() {
-//		return perJobCvRepository.findAll();
-//	}
 
 }
