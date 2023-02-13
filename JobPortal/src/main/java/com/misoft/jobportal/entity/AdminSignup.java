@@ -30,6 +30,9 @@ public class AdminSignup {
     
 	@Column(name="password")
     private String password;
+
+	@Column(name="user_type")
+	private String userType="admin";
 	
 	@Column(name="user_agreement")
     private String userAgreement;
@@ -89,6 +92,12 @@ public class AdminSignup {
 	public void setUserAgreement(String userAgreement) {
 		this.userAgreement = userAgreement;
 	}
-	
-	
+
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
 }

@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Optional;
 
 import com.misoft.jobportal.DTO.PerAppliedJobsDTO;
-import com.misoft.jobportal.entity.employer.PerJobCv;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +16,7 @@ import com.misoft.jobportal.repository.employer.PerJobPostRepository;
 public class PerJobPostService {
 	
 	@Autowired
-	private PerJobPostRepository perJobPostRepository;
+	PerJobPostRepository perJobPostRepository;
 
 	public void save(PerJobPost perJobPost) {
 		perJobPostRepository.save(perJobPost);
