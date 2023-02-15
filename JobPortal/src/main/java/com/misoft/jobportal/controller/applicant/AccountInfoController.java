@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.misoft.jobportal.entity.applicant.AccountInfo;
 import com.misoft.jobportal.service.applicant.AccountInfoService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/applicant")
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
@@ -48,6 +50,11 @@ public class AccountInfoController {
 		post.setPassword(accountInfo.getPassword());
 		accountInfoService.save(post);
 		    return post;
+	}
+
+	@GetMapping("/list/{jobId}")
+	public List<AccountInfo> getAppByJobId(@PathVariable Long jobId) {
+		return accountInfoService.getAppByJobId(jobId);
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.misoft.jobportal.service.applicant;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,11 @@ public class AccountInfoService {
 			accountInfo = data.get();
 		} 
 		return accountInfo;
+	}
+
+	public List<AccountInfo> getAppByJobId(Long jobId) {
+		System.out.println(jobId);
+		return accountInfoRepository.getAppByJobId(jobId);
 	}
 
 }
