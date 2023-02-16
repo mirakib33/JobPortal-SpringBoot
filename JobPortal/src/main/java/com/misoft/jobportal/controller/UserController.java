@@ -6,19 +6,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.misoft.jobportal.entity.Signup;
-import com.misoft.jobportal.service.SignupService;
+import com.misoft.jobportal.entity.User;
+import com.misoft.jobportal.service.UserService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
-public class SignupController {
+public class UserController {
 
 	@Autowired
-	SignupService signupService;
+	UserService userService;
 	
 	@PostMapping("/signup")
-	public Signup save(@RequestBody Signup signup) {
-		signupService.save(signup);
-		return signup;
+	public User save(@RequestBody User user) {
+		userService.save(user);
+		return user;
 	}
 }
