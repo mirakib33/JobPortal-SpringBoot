@@ -53,9 +53,12 @@ public class PerJobPostService {
 			opPerAppliedJobsDTO.setJobTitle(ob[3]!=null? (String) ob[3] :"");
 			opPerAppliedJobsDTO.setCompanyName(ob[4]!=null? (String) ob[4] :"");
 			opPerAppliedJobsDTO.setJobCategory(ob[5]!=null? (String) ob[5] :"");
+			BigInteger b2 = (BigInteger) ob[6];
+			opPerAppliedJobsDTO.setPerjob_cv_id(ob[6]!=null?  b2.longValue() :null);
 			perAppliedJobsDTOS.add(opPerAppliedJobsDTO);
 		}
 
 		return perAppliedJobsDTOS;
 	}
+
 }
