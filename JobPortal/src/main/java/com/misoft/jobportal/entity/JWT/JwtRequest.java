@@ -2,15 +2,15 @@ package com.misoft.jobportal.entity.JWT;
 
 public class JwtRequest {
 
-    private String email;
+    private String emailOrPhone;
     private String password;
 
-    public String getEmail() {
-        return email;
+    public String getEmailOrPhone() {
+        return emailOrPhone;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmailOrPhone(String emailOrPhone) {
+        this.emailOrPhone = emailOrPhone;
     }
 
     public String getPassword() {

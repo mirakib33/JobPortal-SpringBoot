@@ -36,7 +36,7 @@ public class JwtController {
 //        (@RequestBody JwtRequest jwtRequest)
         JwtRequest jwtRequest = new JwtRequest();
 
-        jwtRequest.setEmail(loginRequest.getEmail());
+        jwtRequest.setEmailOrPhone(loginRequest.getEmailOrPhone());
         jwtRequest.setPassword(loginRequest.getPassword());
 
 
