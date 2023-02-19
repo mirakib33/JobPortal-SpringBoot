@@ -1,10 +1,14 @@
-package com.misoft.jobportal.entity.JWT;
+package com.misoft.jobportal.entity;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDateTime;
-import java.util.Set;
 
 @Entity
 @Table(name="users")
@@ -38,17 +42,6 @@ public class User {
 	@CreationTimestamp
 	@Column(name="signup_date")
 	private LocalDateTime signupDate;
-
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "USER_ROLE",
-			joinColumns = {
-					@JoinColumn(name = "USER_ID")
-			},
-			inverseJoinColumns = {
-					@JoinColumn(name = "ROLE_ID")
-			}
-	)
-	private Set<Role> role;
 
 	public Long getUser_id() {
 		return user_id;
@@ -122,11 +115,5 @@ public class User {
 		this.signupDate = signupDate;
 	}
 
-	public Set<Role> getRole() {
-		return role;
-	}
-
-	public void setRole(Set<Role> role) {
-		this.role = role;
-	}
+	
 }
