@@ -9,9 +9,9 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface UserDao extends CrudRepository<User, Long> {
+public interface UserDao extends CrudRepository<User, String> {
 
-    @Query(value = "SELECT u FROM users u WHERE u.email = :emailOrPhone OR u.phone = :emailOrPhone", nativeQuery = true)
-    User findByEmailOrPhone(@Param("emailOrPhone") String emailOrPhone);
+    @Query("SELECT u FROM user u WHERE u.email = :emailOrPhone OR u.phone = :emailOrPhone")
+    Optional<User> findByEmailOrPhone(@Param("emailOrPhone") String emailOrPhone);
 
 }
