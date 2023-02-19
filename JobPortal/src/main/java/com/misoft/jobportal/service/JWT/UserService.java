@@ -27,25 +27,10 @@ public class UserService {
 
 	public void initRoleAndUser() {
 
-		Role adminRole = new Role();
-		adminRole.setRoleName("Admin");
-		adminRole.setRoleDescription("Admin role");
-		roleDao.save(adminRole);
-
-		Role userRole = new Role();
-		userRole.setRoleName("User");
-		userRole.setRoleDescription("Default role for newly created record");
-		roleDao.save(userRole);
-
 		Role roleAdmin = new Role();
 		roleAdmin.setRoleName("ROLE_ADMIN");
 		roleAdmin.setRoleDescription("Default role for newly ROLE_ADMIN record");
 		roleDao.save(roleAdmin);
-
-		Role roleMODERATOR = new Role();
-		roleMODERATOR.setRoleName("ROLE_MODERATOR");
-		roleMODERATOR.setRoleDescription("Default role for newly ROLE_MODERATOR record");
-		roleDao.save(roleMODERATOR);
 
 		User adminUser = new User();
 		adminUser.setEmail("admin@gmail.com");

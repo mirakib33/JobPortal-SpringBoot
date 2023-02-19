@@ -40,7 +40,7 @@ public class Role {
 
     public Role() {
     }
-    public Role(String roleName) {
-        this.roleName = roleName;
+    public Role(Long roleId) {
+        this.roleId = roleId;
     }
 }

@@ -38,7 +38,7 @@ public class JwtService implements UserDetailsService {
         String password = jwtRequest.getPassword();
         authenticate(emailOrPhone, password);
         UserDetails userDetails = loadUserByUsername(emailOrPhone);
-        User user = userDao.findByEmailOrPhone(emailOrPhone).get();
+        User user = userDao.findByEmailOrPhone(emailOrPhone);
 
         String newGeneratedToken = jwtUtil.generateToken(userDetails);
 //        String newGeneratedToken = jwtUtil.generateToken(user);
@@ -48,13 +48,13 @@ public class JwtService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String emailOrPhone) throws UsernameNotFoundException {
-        Optional<User> user = userDao.findByEmailOrPhone(emailOrPhone);
+        User user = userDao.findByEmailOrPhone(emailOrPhone);
 
-        if (user.isPresent()) {
+        if (user!= null) {
             return new org.springframework.security.core.userdetails.User(
-                    user.get().getEmail(),
-                    user.get().getPassword(),
-                    getAuthority(user.get())
+                    user.getEmail(),
+                    user.getPassword(),
+                    getAuthority(user)
             );
         } else {
             throw new UsernameNotFoundException("User not found with username: " + emailOrPhone);

@@ -1,5 +1,7 @@
 package com.misoft.jobportal.DTO.JWT;
 
+import com.misoft.jobportal.entity.JWT.Role;
+
 import javax.persistence.Column;
 import java.util.Set;
 
@@ -26,7 +28,7 @@ public class SignupRequest {
     @Column(name="user_agreement")
     private String userAgreement;
 
-    private Set<String> role;
+    private Set<Role> role;
 
 //    @NotBlank
 //    @Size(min = 6, max = 40)
@@ -87,11 +89,11 @@ public class SignupRequest {
         this.userAgreement = userAgreement;
     }
 
-    public Set<String> getRole() {
+    public Set<Role> getRole() {
         return role;
     }
 
-    public void setRole(Set<String> role) {
+    public void setRole(Set<Role> role) {
         this.role = role;
     }
 }
