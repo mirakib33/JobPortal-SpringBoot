@@ -27,7 +27,7 @@ public class EmpAccountInfo {
     private String email;
     
 	@Column(name="phone")
-    private int phone;
+    private String phone;
 	
 	@Column(name="company_name")
     private String companyName;
@@ -76,11 +76,11 @@ public class EmpAccountInfo {
 		this.email = email;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 

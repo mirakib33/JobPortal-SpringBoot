@@ -1,6 +1,8 @@
 package com.misoft.jobportal.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +20,16 @@ public class SignupController {
 	
 	@PostMapping("/signup")
 	public Signup save(@RequestBody Signup signup) {
-		signupService.save(signup);
-		return signup;
+		if (signupService.findByEmail(signup.getEmail()) != null) {
+			return ResponseEntity.status(HttpStatus.CONFLICT).build();
+		}
+
+		// Set the role to "Applicant" by default
+//		user.setRole("Applicant");
+
+		Signup savedUser = signupService.save(signup);
+		return ResponseEntity.ok(message);
+	}
+		return signupService.save(signup);
 	}
 }

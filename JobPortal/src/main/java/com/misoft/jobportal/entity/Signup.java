@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class Signup {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long user_id;
 	
 	@Column(name="first_name")
@@ -28,7 +28,7 @@ public class Signup {
     private String email;
     
 	@Column(name="phone")
-    private int phone;
+    private String phone;
     
 	@Column(name="password")
     private String password;
@@ -75,11 +75,11 @@ public class Signup {
 		this.email = email;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
