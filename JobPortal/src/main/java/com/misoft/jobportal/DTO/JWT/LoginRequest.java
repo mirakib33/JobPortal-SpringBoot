@@ -2,17 +2,17 @@ package com.misoft.jobportal.DTO.JWT;
 
 public class LoginRequest {
 //    @NotBlank
-    private String emailOrPhone;
+    private String email;
 
 //    @NotBlank
     private String password;
 
-    public String getEmailOrPhone() {
-        return emailOrPhone;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailOrPhone(String emailOrPhone) {
-        this.emailOrPhone = emailOrPhone;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {

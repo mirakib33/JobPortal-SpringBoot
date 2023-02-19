@@ -37,10 +37,14 @@ public class UserService {
 		userRole.setRoleDescription("Default role for newly created record");
 		roleDao.save(userRole);
 
+
+
 		Role roleAdmin = new Role();
 		roleAdmin.setRoleName("ROLE_ADMIN");
 		roleAdmin.setRoleDescription("Default role for newly ROLE_ADMIN record");
 		roleDao.save(roleAdmin);
+
+
 
 		Role roleMODERATOR = new Role();
 		roleMODERATOR.setRoleName("ROLE_MODERATOR");
@@ -57,7 +61,7 @@ public class UserService {
 	}
 
 	public User registerNewUser(User user) {
-		Role role = roleDao.findByRoleName("ROLE_ADMIN");
+		Role role = roleDao.findById("ROLE_ADMIN").get();
 		Set<Role> userRoles = new HashSet<>();
 		userRoles.add(role);
 		user.setRole(userRoles);
