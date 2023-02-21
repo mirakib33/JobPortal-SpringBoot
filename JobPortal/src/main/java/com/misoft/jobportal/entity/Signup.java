@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class Signup {
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long user_id;
 	
 	@Column(name="first_name")

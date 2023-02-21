@@ -19,17 +19,13 @@ public class SignupController {
 	SignupService signupService;
 	
 	@PostMapping("/signup")
-	public Signup save(@RequestBody Signup signup) {
-		if (signupService.findByEmail(signup.getEmail()) != null) {
-			return ResponseEntity.status(HttpStatus.CONFLICT).build();
-		}
+	public String save(@RequestBody Signup signup) {
+			return signupService.save(signup);
+	}
 
-		// Set the role to "Applicant" by default
+//		 Set the role to "Applicant" by default
 //		user.setRole("Applicant");
 
-		Signup savedUser = signupService.save(signup);
-		return ResponseEntity.ok(message);
-	}
-		return signupService.save(signup);
-	}
+
+
 }
