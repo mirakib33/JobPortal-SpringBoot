@@ -26,7 +26,7 @@ public class AdminSignup {
     private String email;
     
 	@Column(name="phone")
-    private String phone;
+    private int phone;
     
 	@Column(name="password")
     private String password;
@@ -69,11 +69,11 @@ public class AdminSignup {
 		this.email = email;
 	}
 
-	public String getPhone() {
+	public int getPhone() {
 		return phone;
 	}
 
-	public void setPhone(String phone) {
+	public void setPhone(int phone) {
 		this.phone = phone;
 	}
 

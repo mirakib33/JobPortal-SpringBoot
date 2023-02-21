@@ -8,6 +8,4 @@ import com.misoft.jobportal.entity.Signup;
 @Repository
 public interface SignupRepository extends JpaRepository<Signup, Long> {
 
-    Signup findByEmail(String email);
-
 }
