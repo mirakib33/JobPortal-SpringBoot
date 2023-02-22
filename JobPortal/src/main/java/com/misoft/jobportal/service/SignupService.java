@@ -16,12 +16,15 @@ public class SignupService {
 	@Autowired
 	SignupRepository signupRepository;
 	
-	public String save(Signup signup) {
-		if(signupRepository.findByEmail(signup.getEmail()) != null) {
-			return "User already exist";
+	public Signup save(Signup signup) {
+		
+		if(!signup.equals(null)) {
+			return signupRepository.save(signup);
 		}
-		signupRepository.save(signup);
-		return "Successfully registered";
+		return ResponseEntity.ok(message);
 	}
 
+	public Signup findByEmail(String email) {
+		return signupRepository.findByEmail(email);
+	}
 }

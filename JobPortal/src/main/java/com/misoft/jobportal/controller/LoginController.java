@@ -1,7 +1,7 @@
 package com.misoft.jobportal.controller;
 
 import com.misoft.jobportal.entity.Signup;
-import com.misoft.jobportal.service.LoginService;
+import com.misoft.jobportal.service.employer.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
