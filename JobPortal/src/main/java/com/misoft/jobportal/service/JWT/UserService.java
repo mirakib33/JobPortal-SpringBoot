@@ -28,9 +28,25 @@ public class UserService {
 	public void initRoleAndUser() {
 
 		Role roleAdmin = new Role();
-		roleAdmin.setRoleName("ROLE_ADMIN");
-		roleAdmin.setRoleDescription("Default role for newly ROLE_ADMIN record");
-		roleDao.save(roleAdmin);
+		if(roleDao.findByRoleName("ROLE_ADMIN")==null){
+			roleAdmin.setRoleName("ROLE_ADMIN");
+			roleAdmin.setRoleDescription("Default role for newly ROLE_ADMIN record");
+			roleDao.save(roleAdmin);
+		}
+
+		Role roleApplicant = new Role();
+		if(roleDao.findByRoleName("ROLE_APPLICANT")==null){
+			roleApplicant.setRoleName("ROLE_APPLICANT");
+			roleApplicant.setRoleDescription("Default role for newly ROLE_APPLICANT record");
+			roleDao.save(roleApplicant);
+		}
+
+		Role roleEmployer = new Role();
+		if(roleDao.findByRoleName("ROLE_EMPLOYER")==null){
+			roleEmployer.setRoleName("ROLE_EMPLOYER");
+			roleEmployer.setRoleDescription("Default role for newly ROLE_EMPLOYER record");
+			roleDao.save(roleEmployer);
+		}
 
 		User adminUser = new User();
 
@@ -39,6 +55,8 @@ public class UserService {
 		Set<Role> adminRoles = new HashSet<>();
 		adminRoles.add(roleAdmin);
 		adminUser.setRole(adminRoles);
+		adminUser.setPhone(123456789);
+
 		try {
 			if (userDao.findByEmailOrPhone("admin@gmail.com")==null){
 				userDao.save(adminUser);
@@ -47,10 +65,17 @@ public class UserService {
 	}
 
 	public User registerNewUser(User user) {
-		Role role = roleDao.findByRoleName("ROLE_ADMIN");
-		Set<Role> userRoles = new HashSet<>();
-		userRoles.add(role);
-		user.setRole(userRoles);
+		if (user.getRole()==null){
+			Role role = roleDao.findByRoleName("ROLE_APPLICANT");
+			Set<Role> userRoles = new HashSet<>();
+			userRoles.add(role);
+			user.setRole(userRoles);
+		}
+		User u = userDao.findByEmailOrPhone(user.getEmail());
+		if (u!=null){
+//			user.setUser_id(u.getUser_id());
+			return null;
+		}
 		user.setPassword(getEncodedPassword(user.getPassword()));
 
 		return userDao.save(user);
