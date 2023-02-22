@@ -11,7 +11,7 @@ import java.util.Optional;
 @Repository
 public interface UserDao extends CrudRepository<User, Long> {
 
-    @Query(value = "SELECT u FROM users u WHERE u.email = :emailOrPhone OR u.phone = :emailOrPhone", nativeQuery = true)
+    @Query(value = "SELECT * FROM users u WHERE u.email = :emailOrPhone OR u.phone = :emailOrPhone", nativeQuery = true)
     User findByEmailOrPhone(@Param("emailOrPhone") String emailOrPhone);
 
 }

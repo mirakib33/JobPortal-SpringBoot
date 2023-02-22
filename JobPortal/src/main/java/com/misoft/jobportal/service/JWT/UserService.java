@@ -33,12 +33,17 @@ public class UserService {
 		roleDao.save(roleAdmin);
 
 		User adminUser = new User();
+
 		adminUser.setEmail("admin@gmail.com");
 		adminUser.setPassword(getEncodedPassword("admin"));
 		Set<Role> adminRoles = new HashSet<>();
 		adminRoles.add(roleAdmin);
 		adminUser.setRole(adminRoles);
-		userDao.save(adminUser);
+		try {
+			if (userDao.findByEmailOrPhone("admin@gmail.com")==null){
+				userDao.save(adminUser);
+			}
+		}catch (Exception e){e.printStackTrace();}
 	}
 
 	public User registerNewUser(User user) {
