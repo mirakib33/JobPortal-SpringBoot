@@ -32,7 +32,7 @@ public class UserController {
 	}
 
 	@PostMapping({"/signup"})
-	public User registerNewUserNew(@RequestBody SignupRequest signupRequest) {
+	public User registerNewUser(@RequestBody SignupRequest signupRequest) {
 		User user = new User();
 		user.setFirstName(signupRequest.getFirstName());
 		user.setLastName(signupRequest.getLastName());
